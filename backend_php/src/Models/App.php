@@ -5,6 +5,6 @@ namespace App\Models;
 class App
 {
     public function getWelcomeMessage() {
-        return "Bienvenu sur BlaBlApp";
+        return "Bienvenu sur BlaBlApp !!!";
     }
 }

@@ -33,3 +33,15 @@ Url de l'api :
 
 Url de Adminer pour gérer la BDD :
 >http://localhost:8978/
+
+
+# BlaBlApp Flutter
+Application mobile
+
+## Installation et Lancement
+
+### Lancer l'environnement
+```bash
+flutter pub get
+flutter run
+```
