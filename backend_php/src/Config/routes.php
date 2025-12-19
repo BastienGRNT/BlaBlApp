@@ -5,11 +5,10 @@ use Bramus\Router\Router;
 
 /** @var Router $router */
 
-$router->mount('/api/v1', function() use ($router) {
+$router->mount('/api/v1', function() use ($router)
+{
 
 });
-
-
 
 
 $router->get('/', function() use ($router) {

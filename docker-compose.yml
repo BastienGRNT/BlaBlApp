@@ -14,9 +14,9 @@ services:
     image: postgres:16-alpine
     container_name: blablapp_db
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: db_password
+      POSTGRES_DB: blablapp_db
     ports:
       - "5122:5432"
     volumes:
