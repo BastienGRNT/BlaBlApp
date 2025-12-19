@@ -1,0 +1,42 @@
+services:
+  backend:
+    build:
+      context: ./backend_php
+    container_name: blablapp_php
+    ports:
+      - "6004:80"
+    volumes:
+      - ./backend_php/src:/var/www/html
+    networks:
+      - blablapp_network
+
+  db:
+    image: postgres:16-alpine
+    container_name: blablapp_db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5122:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - blablapp_network
+
+  adminer:
+    image: adminer
+    container_name: blablapp_adminer
+    ports:
+      - "8978:8080"
+    depends_on:
+      - db
+    networks:
+      - blablapp_network
+
+networks:
+  blablapp_network:
+    driver: bridge
+
+volumes:
+  db_data:
